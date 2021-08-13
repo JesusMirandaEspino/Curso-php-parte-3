@@ -26,6 +26,17 @@ if( $r ){
 echo '<p>' . $p . '</p>';
 
 
+$mail = 'mutuelo@gmail.com';
+$arroba = strpos( $mail, '@' );
+$arroba++;
+$punto = strpos( $mail, '.', $arroba );
+$longotud = $punto - $arroba;
+$servicio = substr( $mail, $arroba, $longotud );
+
+echo '<p>' . $servicio . '</p>';
+
+
+
 ?>
 
 
