@@ -1,5 +1,29 @@
 <?php
 
+$cadena1 = 'Esta es una cadena de texto';
+$cadena2 = '';
+$cadena3 = 'es';
+
+for( $i=0;$i < strlen( $cadena1 ); $i++  ){
+    $cadena2 = $cadena1[$i] . $cadena2;
+
+}
+
+
+echo '<p>' . $cadena1 . '</p>' ;
+echo '<p>' . $cadena2 . '</p>';
+
+$r = strstr( $cadena1, $cadena3 );
+$p = strpos($cadena1, $cadena3 );
+
+if( $r ){
+    echo '<p>Valor encontrado</p>';
+}else{
+    echo '<p>Valor no encontrado</p>';
+}
+
+
+echo '<p>' . $p . '</p>';
 
 
 ?>
