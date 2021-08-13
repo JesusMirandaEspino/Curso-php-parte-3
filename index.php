@@ -36,6 +36,17 @@ $servicio = substr( $mail, $arroba, $longotud );
 echo '<p>' . $servicio . '</p>';
 
 
+echo  '<p> ' .  strtoupper($cadena1) .  '  </p>' ;
+echo  '<p> ' .  strtolower($cadena1) .  '  </p>';
+
+
+echo   is_numeric(5) .  '<br/>';
+echo   is_numeric('5') .  '<br/>';
+echo   is_numeric('cinco') ;
+echo 'hola <br/>';
+echo is_nan( acos( 8 ) )?'No es un numeto':'Es un numero' ;
+echo '-*******- <br/>';
+echo is_finite(log(0))?'Es finito':'No es un numero';
 
 ?>
 
