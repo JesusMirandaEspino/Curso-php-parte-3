@@ -5,8 +5,12 @@ $re = str_replace( '$', '', $texto );
 $ca = str_replace( ',', '', $re );
 echo $ca;
 
+echo '<br/>';
 
 
+$nuevaCadena = 'esta es una cadena de texto';
+
+echo str_shuffle( $nuevaCadena );
 
 
 ?>
