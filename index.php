@@ -14,11 +14,28 @@ echo str_shuffle( $nuevaCadena );
 
 $tabla = get_html_translation_table( HTML_ENTITIES );
 $otraCadena = 'esta es otra cadena de texto con salto de linea para una brueba con una funcion en php';
-$salida = wordwrap( $otraCadena, 20, '<br/>' );
+$salida = wordwrap( $otraCadena, 20, '<br/>', true );
+
+
+$frutas = 'manzana melon platano sandia';
+$frutas_array = explode( ' ', $frutas );
+
+foreach(  $frutas_array as $fruta ){
+    echo '<p> ' .  $fruta . '</p>';
+}
+
+
+list( $manzana, $melon, $platano, $sandia ) = explode(' ', $frutas);
+
+echo $manzana . '   ' . $melon .  '   ' .  $platano . '   ' . $sandia;
 
 // error al imprimir str echo strstr( $otraCadena, $tabla );
 
 echo $salida;
+
+
+
+
 
 ?>
 
