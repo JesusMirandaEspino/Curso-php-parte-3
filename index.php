@@ -13,12 +13,12 @@ $nuevaCadena = 'esta es una cadena de texto';
 echo str_shuffle( $nuevaCadena );
 
 $tabla = get_html_translation_table( HTML_ENTITIES );
-$otraCadena = 'esta es otra cadena de texto con salto de linea <br/>';
+$otraCadena = 'esta es otra cadena de texto con salto de linea para una brueba con una funcion en php';
+$salida = wordwrap( $otraCadena, 20, '<br/>' );
 
+// error al imprimir str echo strstr( $otraCadena, $tabla );
 
-print strstr( $otraCadena, $tabla );
-
-
+echo $salida;
 
 ?>
 
