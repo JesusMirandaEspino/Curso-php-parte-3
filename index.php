@@ -20,6 +20,18 @@ $salida = wordwrap( $otraCadena, 20, '<br/>', true );
 $frutas = 'manzana melon platano sandia';
 $frutas_array = explode( ' ', $frutas );
 
+$nombre = 'Jose de Jesus Miranda Espino';
+
+echo cos( 2.11122 ) .  '<br/>';
+echo atan(1.22) .  '<br/>';
+echo atanh(1.22) .  '<br/>';
+echo 1/sin(0.701) .  '<br/>';
+echo 1/cos(0.701) .  '<br/>';
+echo 1/tan(0.701) .  '<br/>';
+
+echo ucwords( $nombre ) . '<br/>';
+echo ucfirst($nombre) . '<br/>';
+
 foreach(  $frutas_array as $fruta ){
     echo '<p> ' .  $fruta . '</p>';
 }
@@ -32,6 +44,7 @@ echo $manzana . '   ' . $melon .  '   ' .  $platano . '   ' . $sandia;
 // error al imprimir str echo strstr( $otraCadena, $tabla );
 
 echo $salida;
+
 
 
 
