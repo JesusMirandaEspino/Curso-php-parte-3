@@ -148,6 +148,37 @@ echo intdiv(75, 7);
 echo $salto;
 echo  '<hr>';
 echo fmod(5.7, 1.3);
+
+$bytes = random_bytes(10);
+echo $salto;
+echo  '<hr>';
+echo bin2hex($bytes);
+
+echo $salto;
+echo  '<hr>';
+echo random_int(0, 1024);
+
+
+echo $salto;
+echo  '<hr>';
+
+$texto = "\t\thola a todos\t\t";
+$binario = "\x09hola a todos\x0A";
+$saludar = ' Hola a todos ';
+
+$cadena = rtrim($texto);
+echo $cadena;
+
+echo $salto;
+echo  '<hr>';
+$cadena = trim($texto);
+echo $cadena;
+
+echo $salto;
+echo  '<hr>';
+$cadena2 = ltrim( $binario, "\x00..\x1F" );
+echo $cadena2;
+
 ?>
 
 
