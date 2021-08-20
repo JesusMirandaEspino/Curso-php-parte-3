@@ -3,9 +3,10 @@
 $texto = '$560,000';
 $re = str_replace( '$', '', $texto );
 $ca = str_replace( ',', '', $re );
+$salto = '<br/>';
 echo $ca;
 
-echo '<br/>';
+echo $salto;
 
 
 $nuevaCadena = 'esta es una cadena de texto';
@@ -22,7 +23,7 @@ $frutas_array = explode( ' ', $frutas );
 
 $nombre = 'Jose de Jesus Miranda Espino';
 
-echo cos( 2.11122 ) .  '<br/>';
+echo cos( 2.11122 ) .  $salto;
 echo atan(1.22) .  '<br/>';
 echo atanh(1.22) .  '<br/>';
 echo 1/sin(0.701) .  '<br/>';
@@ -45,9 +46,11 @@ echo $manzana . '   ' . $melon .  '   ' .  $platano . '   ' . $sandia;
 
 echo $salida;
 
+echo $salto;
 
+echo rand( 100, 200 );
 
-
+echo $salto;
 
 
 ?>
