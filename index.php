@@ -53,6 +53,39 @@ echo rand( 100, 200 );
 echo $salto;
 
 
+foreach(  range( 0, 30 )  as $key => $value ){
+    echo ' *** '. $value;
+}
+
+echo $salto;
+echo  '<hr>';
+
+foreach (range(0, 50, 5)  as $key => $value) {
+    echo ' --- ' . $value;
+}
+
+
+echo $salto;
+echo  '<hr>';
+
+foreach (range( 'a', 'z' )  as $key => $value) {
+    echo ' *** ' . $value;
+}
+
+
+echo $salto;
+echo  '<hr>';
+echo exp(12);
+
+echo $salto;
+echo  '<hr>';
+echo pow(2, 6);
+
+echo $salto;
+echo  '<hr>';
+echo sqrt(9);
+
+
 ?>
 
 
