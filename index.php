@@ -5,7 +5,7 @@ $re = str_replace( '$', '', $texto );
 $ca = str_replace( ',', '', $re );
 $salto = '<br/>';
 echo $ca;
-
+$hexadecimal = 'ff6600';
 echo $salto;
 
 
@@ -85,7 +85,69 @@ echo $salto;
 echo  '<hr>';
 echo sqrt(9);
 
+echo $salto;
+echo  '<hr>';
+echo base_convert( $hexadecimal, 16, 2  );
 
+
+echo $salto;
+echo  '<hr>';
+echo base_convert($hexadecimal, 16, 8);
+
+echo $salto;
+echo  '<hr>';
+echo base_convert($hexadecimal, 16, 10);
+
+
+echo $salto;
+echo  '<hr>';
+echo hexdec( 'ABCD' );
+
+
+echo $salto;
+echo  '<hr>';
+echo abs( 12.5 );
+
+
+echo $salto;
+echo  '<hr>';
+echo abs(14.6);
+
+echo $salto;
+echo  '<hr>';
+echo round(14.5);
+
+echo $salto;
+echo  '<hr>';
+echo floor(12.514542);
+
+
+echo $salto;
+echo  '<hr>';
+echo max(1,2,3,4,5,6,7,8,9);
+
+
+echo $salto;
+echo  '<hr>';
+echo min(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+echo $salto;
+echo  '<hr>';
+echo intdiv( 3,2 );
+
+echo $salto;
+echo  '<hr>';
+echo intdiv(35, 7);
+
+echo $salto;
+echo  '<hr>';
+echo intdiv(75, 7);
+
+
+echo $salto;
+echo  '<hr>';
+echo fmod(5.7, 1.3);
 ?>
 
 
