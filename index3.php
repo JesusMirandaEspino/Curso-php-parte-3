@@ -1,22 +1,45 @@
 <?php
 
+$archivo = 'imagen.jpg';
+$carpeta = '/imagenes';
 
-//  ejemplo header( 'Content-Type: application / pdf ' );
-//  ejemplo echo file_get_contents( '/archivo.pdf' );
-
-
-// ejemplo header('Content-Type: text/json ');
-// ejemplo echo file_get_contents('/archivo.json');
-
-/* Ejemplo  $img = @imagecreatefromgif( '/arhiivo/img.gif' );
-header('Content-Type: image/gif ');
-imagejpeg(  $img );
-imagedestroy(  $img );   */
+if( file_exists(  $carpeta.$archivo ) ){
 
 
-header('Content-Type: application/octect-stream ');
-header('Content-Disposition: attachment; filename=example.zip ');
-echo file_get_contents('/exam.zip');
+    if( is_file($carpeta . $archivo ) ){
+        echo 'Si es un archivo';
+
+        $size = filesize($carpeta . $archivo );
+        $creado = filectime($carpeta . $archivo );
+        $modificado = filemtime($carpeta . $archivo );
+
+    }else if(  is_dir($carpeta . $archivo  ) ){
+        echo 'Si existe la carpeta';
+        $dirID = opendir( $carpeta . $archivo  );
+
+        while( $nombre = readdir( $dirID ) ){
+            echo $dirID;
+
+            if(  is_file(  $carpeta . $archivo )){ 
+                echo $archivo;  
+            }
+            if (is_dir($carpeta . $archivo)) {
+                echo $archivo;
+            }
+        }
+        
+    }
+
+
+    echo 'Si existe el archivo';
+
+
+
+
+}else{
+    echo 'No existe el archivo';
+}
+
 
 
 ?>
