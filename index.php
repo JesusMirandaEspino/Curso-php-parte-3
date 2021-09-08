@@ -13,10 +13,22 @@ header('Content-Type: image/gif ');
 imagejpeg(  $img );
 imagedestroy(  $img );   */
 
-
+/* ejemplo 
 header('Content-Type: application/octect-stream ');
 header('Content-Disposition: attachment; filename=example.zip ');
 echo file_get_contents('/exam.zip');
+*/
+
+
+
+
+$contador = 'contador.txt';
+
+if(  touch( $contador ) ){
+    echo $contador;
+}else{
+    echo 'Hubo un error con el touch';
+}
 
 
 ?>
