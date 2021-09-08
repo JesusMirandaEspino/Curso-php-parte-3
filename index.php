@@ -8,8 +8,26 @@ if( file_exists(  $carpeta.$archivo ) ){
 
     if( is_file($carpeta . $archivo ) ){
         echo 'Si es un archivo';
+
+        $size = filesize($carpeta . $archivo );
+        $creado = filectime($carpeta . $archivo );
+        $modificado = filemtime($carpeta . $archivo );
+
     }else if(  is_dir($carpeta . $archivo  ) ){
         echo 'Si existe la carpeta';
+        $dirID = opendir( $carpeta . $archivo  );
+
+        while( $nombre = readdir( $dirID ) ){
+            echo $dirID;
+
+            if(  is_file(  $carpeta . $archivo )){ 
+                echo $archivo;  
+            }
+            if (is_dir($carpeta . $archivo)) {
+                echo $archivo;
+            }
+        }
+        
     }
 
 
