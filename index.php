@@ -26,9 +26,18 @@ $contador = 'contador.txt';
 
 if(  touch( $contador ) ){
     echo $contador;
+
+    $id = fopen( $contador, 'a'  );
+
+
+    fclose( $id );
+
 }else{
     echo 'Hubo un error con el touch';
 }
+
+
+// para borrar un archivo unlink(  $contador );
 
 
 ?>
