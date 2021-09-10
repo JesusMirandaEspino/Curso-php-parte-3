@@ -24,7 +24,27 @@ echo file_get_contents('/exam.zip');
 
 $contador = 'contador.txt';
 $archivo = 'archivo.txt';
+$archivo1 = 'archivo.txt';
 
+
+
+if ( touch($archivo1)){
+
+    $linea1 = 'Este es un texto';
+    $linea2 = 'Este es otro texto';
+    $linea3 = 'Este es un nuevo texto';
+    $linea4 = 'Este es una variante de texto';
+
+    $id2 = fopen( $archivo1, 'w'  );
+
+    fwrite($id2, $linea1);
+    fwrite($id2, $linea2);
+    fwrite($id2, $linea3);
+    fwrite($id2, $linea4);
+
+    fclose( $id2 );
+
+}
 
 if( touch(  $archivo ) ){
     $id2 = fopen( $archivo, 'r' );
