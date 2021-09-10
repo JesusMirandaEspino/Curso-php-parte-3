@@ -23,6 +23,26 @@ echo file_get_contents('/exam.zip');
 
 
 $contador = 'contador.txt';
+$archivo = 'archivo.txt';
+
+
+if( touch(  $archivo ) ){
+    $id2 = fopen( $archivo, 'r' );
+
+    while( !feof( $id2 ) ){
+        $linea = fgets( $id2, 1024 );
+    }
+
+    fclose( $id2 );
+
+
+}else{
+    echo 'Error al buscar el archivo';
+}
+
+
+
+
 
 if(  touch( $contador ) ){
     echo $contador;
