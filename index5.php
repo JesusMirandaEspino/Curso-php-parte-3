@@ -1,9 +1,55 @@
 <?php
 
-$nombre = 'datos';
-$valor = 'jesus@correo.com|Jesus|Miranda|1268418948';
-$fecha = time() + (60*60*24);
-setcookie( $nombre, $valor, $fecha ); 
+    touch("datos.txt");
+
+    // Copiar un arhivo
+    if( copy(  datos.txt, datos1.txt ) ){
+        echo 'Copia de datos correctamente';
+    }else{
+        echo 'Error al copiar los datos';
+    }
+
+    //Renombrar un archivo
+    if( rename(  datos1.txt, datos2.txt ) ){
+        echo 'Archivo renombrado correctamente';
+    }else{
+        echo 'Error al tratar de renombrar el archivo';
+    }
+
+
+
+    $archivo = 'contador.txt';
+    if( file_exists($archivo) ){
+        $a = fopen($archivo, 'r+');
+        $visita = fgets($a, 1024);
+        $visita++;
+        rewind( $a );
+        fwrite( $a, $visita );
+    }else{
+        $a = fopen($archivo, 'w+');
+        $visita = 1;
+        fwrite( $a, $visita );   
+    }
+    fclose($a);
+
+
+    if( $visita==1 ){
+        echo 'Felicidades usted es nuestra primera visita';
+    }else{
+        echo 'Usted es la visita n.-' . $visita;
+    }
+
+
+    $cadena = 'Esta es una cadena de texto';
+    file_put_contents( 'poema.txt', $cadena );
+
+    $cadena = file_get_contents('poema.txt');
+
+    $cadena = 'Esta es otra cadena de texto';
+
+    file_put_contents( 'poema.txt', $cadena, FILE_APPEND | LOCK_EX );
+
+    $cadena = file_get_contents('poema.txt');
 
 
 ?>
