@@ -47,6 +47,19 @@ setcookie( $nombre, $valor, $fecha );
     <header>
 
 
+    <?php 
+    
+        if( isset( $_COOKIE['datos'] ) ){
+            $datos = $_COOKIE['datos'];
+            $datos_array = explode( '|', $datos );
+            $email = $datos_array[0];
+            $nombre = $datos_array[1];
+            $apellido = $datos_array[2];
+            $fecha = $datos_array[3];
+            echo 'Hola ' . $nombre . ' '  . $apellido .  ' recibimos tus datos, en breve nos comunicaremos contigo'; 
+        }
+    
+    ?>
 
 
 
