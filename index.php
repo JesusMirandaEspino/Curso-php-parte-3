@@ -1,114 +1,28 @@
 <?php
 
+    touch("datos.txt");
 
-//  ejemplo header( 'Content-Type: application / pdf ' );
-//  ejemplo echo file_get_contents( '/archivo.pdf' );
+    // Copiar un arhivo
+    if( copy(  datos.txt, datos1.txt ) ){
+        echo 'Copia de datos correctamente';
+    }else{
+        echo 'Error al copiar los datos';
+    }
 
-
-// ejemplo header('Content-Type: text/json ');
-// ejemplo echo file_get_contents('/archivo.json');
-
-/* Ejemplo  $img = @imagecreatefromgif( '/arhiivo/img.gif' );
-header('Content-Type: image/gif ');
-imagejpeg(  $img );
-imagedestroy(  $img );   */
-
-/* ejemplo 
-header('Content-Type: application/octect-stream ');
-header('Content-Disposition: attachment; filename=example.zip ');
-echo file_get_contents('/exam.zip');
-*/
-
-
-
-
-$contador = 'contador.txt';
-$archivo = 'archivo.txt';
-$archivo1 = 'archivo.txt';
-
-
-
-if ( touch($archivo1)){
-
-    $bandera = false;
-    $maximo = 100000;
-    $contar = 0;
-
-    while( !$bandera ){
-        if( !is_writable($archivo1) ){
-            $bandera = true;
-            break;
-        }
-        $contar++;
-
-        if( $contar > $maximo ){
-            break;
-        }
-
-
-        if($bandera){
-            $linea1 = 'Este es un texto';
-            $linea2 = 'Este es otro texto';
-            $linea3 = 'Este es un nuevo texto';
-            $linea4 = 'Este es una variante de texto';
-
-            $id2 = fopen($archivo1, 'w');
-
-            fwrite($id2, $linea1);
-            fwrite($id2, $linea2);
-            fwrite($id2, $linea3);
-            fwrite($id2, $linea4);
-
-            flock( $archivo1, 3 );
-        }
-
-
+    //Renombrar un archivo
+    if( rename(  datos1.txt, datos2.txt ) ){
+        echo 'Archivo renombrado correctamente';
+    }else{
+        echo 'Error al tratar de renombrar el archivo';
     }
 
 
 
-    fclose( $id2 );
-    flock($archivo1, 3);
-
-}
-
-if( touch(  $archivo ) ){
-    $id2 = fopen( $archivo, 'r' );
-
-    while( !feof( $id2 ) ){
-        $linea = fgets( $id2, 1024 );
-    }
-
-    fclose( $id2 );
 
 
-}else{
-    echo 'Error al buscar el archivo';
-}
-
-
-
-
-
-if(  touch( $contador ) ){
-    echo $contador;
-
-    $id = fopen( $contador, 'a'  );
-
-
-    fclose( $id );
-
-}else{
-    echo 'Hubo un error con el touch';
-}
-
-
-// para borrar un archivo unlink(  $contador );
 
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
