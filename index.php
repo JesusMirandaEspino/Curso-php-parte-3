@@ -40,6 +40,18 @@
     }
 
 
+    $cadena = 'Esta es una cadena de texto';
+    file_put_contents( 'poema.txt', $cadena );
+
+    $cadena = file_get_contents('poema.txt');
+
+    $cadena = 'Esta es otra cadena de texto';
+
+    file_put_contents( 'poema.txt', $cadena, FILE_APPEND | LOCK_EX );
+
+    $cadena = file_get_contents('poema.txt');
+
+
 ?>
 
 <!DOCTYPE html>
