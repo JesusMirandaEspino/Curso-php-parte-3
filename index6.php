@@ -1,10 +1,12 @@
 <?php
 
-    if( isset($_REQUEST['politica-cookies']) ){
-        $caducidad = time() + ( 60 * 60 * 24 * 365 );
+$nombre = 'datos';
+$valor = 'jesus@correo.com|Jesus|Miranda|1268418948';
 
-        setcookie( 'politica', '1', $caducidad );
-    }
+// borrar una cookie $fecha = time() - 1;
+
+$fecha = time() + (60*60*24);
+setcookie( $nombre, $valor, $fecha ); 
 
 
 ?>
@@ -49,33 +51,18 @@
 
 
     <?php 
-    if( !isset( $_REQUEST[ 'politica-cookies' ] ) && !isset( $_COOKIE['politica'] )  ): 
+    
+        if( isset( $_COOKIE['datos'] ) ){
+            $datos = $_COOKIE['datos'];
+            $datos_array = explode( '|', $datos );
+            $email = $datos_array[0];
+            $nombre = $datos_array[1];
+            $apellido = $datos_array[2];
+            $fecha = $datos_array[3];
+            echo 'Hola ' . $nombre . ' '  . $apellido .  ' recibimos tus datos, en breve nos comunicaremos contigo'; 
+        }
+    
     ?>
-
-        <section  class="fila" >
-
-            <div class="contenedor1" >
-
-                <div class="col-full-12" id="galletas1" >
-
-                    <p> Esta pagina utiliza cookies, para obtener datos de navegacion. Si continuas, consideramos que estas de acuerdo </p>
-                    <a href="./politicas-cookies.php"> Mas Informacion </a>
-                    <button type=""  id="aceptar">Aceptar</button>
-            
-                </div>
-
-                <div class="col-full-12" id="galletas2"  onmouseover="document.getElementById(galletas1)" >
-                    <p>Politicas de cookies</p>
-                </div>
-                
-            </div>
-            
-        </section> 
-            
- 
-
-
-    <?php  endif; ?>
 
 
 
@@ -96,16 +83,6 @@
 
     </footer>
 
-    <script >
-
-        window.onload = function (){
-            document.getElementById('aceptar').onclick = function () {
-                window.location='?politica-cookies=acepto';
-            }
-        }
-
-
-    </script>
 
     <script src="assets/js/app.js"></script>
 
